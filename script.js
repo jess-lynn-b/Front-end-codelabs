@@ -1,44 +1,71 @@
-console.log(navigator.userAgentData.brands);
+//Exercise 1
+function outerFunction() {
+	let outerVar = "I'm outside!";
 
-//  global scope
-let game = 'Sonic'; // global Variable
+	function innerFunction() {
+		let innerVar = "I'm inside!";
+		console.log(outerVar); // yes access the outerVar
+		console.log(innerVar); // yes access the innerVar
+	}
 
- console.log (game);
-
- function title () {
-    console.log('${game}');
- }
-
- title();
-
- if (true) {
-  console.log('${game}');
- }
- 
-//  local scope
-
-function a(){
-  let game = 'Sonic'; //Functional scope 
-  console.log(game); 
+	innerFunction();
 }
 
-a();
- if (true){
-  let game = 'Mario'; 
-  console.log(game);
- }
+outerFunction();
 
-if (true) {
-  let greeting = 'hello';
+//Exercise 2 unable to call bc it hasnt been declared
+
+function mainFunction (type, year) {
+  let mainFunction = 'Jeep, 2022';
+  console.log(mainFunction);
 }
-console.log(greeting);
+mainFunction();
 
 
-// Tasks after video//
-// Task 1
+// Exercise 3
+function counter (){
+  let count = 0;
 
-  let firstName = 'John';
-  let lastName = 'Smith';
-  let age = '25';
-  let sentence = firstName +" " + lastName + "is" + age + "years old.";
-  console.log(sentence);
+  return {
+    increment: function (){
+      count++ ;
+      return count;
+    },
+
+    decrement: function (){
+      count --;
+      return count;
+    },
+     getCount: function () {
+      return counter;
+    }
+      
+  }
+}
+let myCounter = counter();
+console.log("My count is initially: " + myCounter.getCount());
+myCounter.increment();
+console.log("My count is now..." + myCounter.getCount());
+
+//Exercise 4
+
+let firstName = "Jess";
+
+function modifyGlobal(){
+  let firstName = "Amy";
+  console.log("My name is" + firstName);
+}
+
+function localScopeTest() {
+ const firstName = "Amy";
+ console.log("My name is" + firstName);
+}
+console.log("My name is really..." + firstName);
+
+// Exercise 5
+
+function functionFactory(param) {
+  // Return a function that makes use of 'param'
+}
+
+// Create an instance of the inner function by invoking functionFactory with a parameter
