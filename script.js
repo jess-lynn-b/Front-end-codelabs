@@ -1,11 +1,13 @@
-//Exercise 1
+//Exercise 1 Use JavaScript Scope Properly
 function outerFunction() {
 	let outerVar = "I'm outside!";
 
 	function innerFunction() {
 		let innerVar = "I'm inside!";
-		console.log(outerVar); // yes access the outerVar
-		console.log(innerVar); // yes access the innerVar
+		console.log(outerVar); //  Can we access outerVar?
+    // yes, you can access the outerVar
+		console.log(innerVar); // Can we access innerVar?
+    // yes, you can access the innerVar
 	}
 
 	innerFunction();
@@ -13,59 +15,75 @@ function outerFunction() {
 
 outerFunction();
 
-//Exercise 2 unable to call bc it hasnt been declared
+//Exercise 2 Apply Hoisting Correctly in a JS Project
 
-function mainFunction (type, year) {
-  let mainFunction = 'Jeep, 2022';
-  console.log(mainFunction);
+console.log(mainFunction (1,'1')); // => false
+function mainFunction(value1, value2) {
+  return value1 === value2;
+
 }
 mainFunction();
 
+// Exercise 3 Implement Closures in JavaScrip
+function parentFunction(){
+  let kidsName = 'Brooklynn';
+  console.log(kidsName);
 
-// Exercise 3
-function counter (){
-  let count = 0;
-
-  return {
-    increment: function (){
-      count++ ;
-      return count;
-    },
-
-    decrement: function (){
-      count --;
-      return count;
-    },
-     getCount: function () {
-      return counter;
-    }
-      
-  }
+function childFunction(){
+  const age = '12'
+  console.log(age);
 }
-let myCounter = counter();
-console.log("My count is initially: " + myCounter.getCount());
-myCounter.increment();
-console.log("My count is now..." + myCounter.getCount());
+return childFunction();
+}
+parentFunction();
 
-//Exercise 4
+//Exercise 4 Understand the differences between Local and Global Scope
 
 let firstName = "Jess";
 
 function modifyGlobal(){
   let firstName = "Amy";
-  console.log("My name is" + firstName);
+  console.log("My name is"+ " " + firstName);
 }
 
 function localScopeTest() {
- const firstName = "Amy";
- console.log("My name is" + firstName);
+ const firstName = "Sarah";
+ console.log("My name is" + " " + firstName);
 }
+modifyGlobal();
+localScopeTest();
 console.log("My name is really..." + firstName);
 
-// Exercise 5
+// Exercise 5 Implement a Function Factory using Closures
 
 function functionFactory(param) {
-  // Return a function that makes use of 'param'
+ return function (vacation) {
+  return `${vacation} ${param}!`;
+ };
+}
+const magicKingdom = functionFactory('Disney');
+console.log(magicKingdom('Where dreams come true'));
+
+//Exercise 6 Examine how Hoisting impacts variable declarations and the different types of variables used
+
+function hoistingTest() {
+  // Try printing a variable here
+  // console.log(cash);// Cannot access 'cash' before the initalization
+    // Declare the variable after the console.log
+
+  let cash = 'the amount';
+  console.log(`${cash}`) //the amount displays
+}
+hoistingTest();
+
+// Exercise 7
+....
+function setupCounter() {
+    // Define a count variable here
+
+    return function() {
+        // Increment and print the count
+    }
 }
 
-// Create an instance of the inner function by invoking functionFactory with a parameter
+// Create a counter instance and invoke it to test
