@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events Exercise</title>
+    <h2>September 18, exercise 2</h2>
+</head>
+<body>
+<!-- Button with inline event handler -->
+<button class="btn btn_inline" onclick="changeBackground()">Exercise 2 btn</button>
+
+<h3>Exercise 4 </h3>
+<div class="btn-container">
+  <button id="btn4" onClick="reply_click()">Click Me</button>
+
+    <h3>Exercise 5</h3>
+    <input type="text" id="textInput">
+  <p id="textDisplay"></p>  
+</div>
+<script src="dom2main.js">
+// Exercise 5 JS\\
+const input = document.querySelector("input"); 
+const log = document.getElementById("textDisplay");
+
+input.addEventListener("input", updateValue);
+
+function updateValue(e) {
+  log.textContent = e.target.value;
+}
+
+</script>
+</body>
+</html>

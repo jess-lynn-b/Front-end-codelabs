@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Buttons DOM Exercise</title>
+</head>
+<body>
+    
+    <button class="btn_onclick btn1">Button 1</button>
+    <button class="btn_onclick btn2">Button 2</button>
+    <button class="btn_onclick btn3">Button 3</button>
+    <button class="btn_onclick btn4">Button 4</button>
+
+</body>
+    <script>
+        const buttons = document.querySelectorAll('.btn_onclick');
+        const btn1 = document.querySelector('.btn1');
+        const btn2 = document.querySelector('.btn2');
+        const btn3 = document.querySelector('.btn3');
+        const btn4 = document.querySelector('.btn4');
+
+
+        buttons.forEach((button => {
+            button.onclick = function (){
+              document.body.style.backgroundColor = '#D5A0D7';
+            };
+        }));
+
+        btn1.addEventListener('click', function (){
+          document.body.style.backgroundColor = '#DC5DE1';
+        });
+
+        btn2.addEventListener('click', function (){
+          document.body.style.backgroundColor = '#0E16F0';
+        });
+
+        btn3.addEventListener('click', function (){
+          document.body.style.backgroundColor = '#0EF0D2';
+        });
+
+        btn4.addEventListener('click', function (){
+          document.body.style.backgroundColor = '#F0590E';
+        });
+
+
+
+    </script>
+</html>
