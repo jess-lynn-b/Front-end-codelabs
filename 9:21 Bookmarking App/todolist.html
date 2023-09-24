@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Title and add new task-->
+  <h1>My To Do List</h1>
+  <div class="container">
+    <p>
+      <label for="new-task">Add Item To List</label>
+      <input id="new-task" type="text">
+      <button type="button" class="btn btn-primary mr-3" data-toggle="modal">Add</button>
+     </p>
+
+    <!--- To Do List-->
+     <h3 label for="current-list">Need To Complete:</h3>
+     <ul id="taskList">
+      <li><input type="checkbox"><label>Take Vitamins</label></li>
+
+      <li class="bills"><input type="checkbox"><label>Pay Ameren bill</label><input type="text"></li>
+      <li><input type="checkbox"><label>Go to grocery store</label><input type="text"></li>
+      <li class="editMode"><input type="checkbox"><label>Put deposit on Disney cruise</label></li>
+    </ul>
+    <!-- Completed Tasks-->
+    <h3 label for="completed-tasks">Completed</h3>
+    <ul id="completedList">
+      <li><input type="checkbox" checked><label>See the Doctor</label></li>
+        <li><input type="checkbox" checked><label>Wash kids bedding</label></li>
+        <li><input type="checkbox" checked><label>Prep Dinner in crockpot</label></li>
+    </ul>
+  </div> 
+  <script type="javascript" src="app.js"></script>
+</body>
+</html>
